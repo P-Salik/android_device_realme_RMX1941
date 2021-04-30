@@ -2,6 +2,18 @@
 # ADSP
 vendor/lib64/libadsprpc.so
 
+# AEE
+vendor/lib/libdirect-coredump.so
+vendor/lib64/libdirect-coredump.so
+
+# AEE - from Ulefone/Note_11P/Note_11P:11/RP1A.200720.011/2101131254:user/release-keys
+vendor/lib/libaedv.so|68eb76e22650e6f7b09f6c1db32a72851445789f
+vendor/lib/libladder.so|b3161af9c1ae115b467ed6d210355348717145c8
+vendor/lib/libudf.so|0910236ff7b602a7ee4b6cf5472b5cff0d301f52
+vendor/lib64/libaedv.so|bd09673530e80f6cde27d91229b6df6394191053
+vendor/lib64/libladder.so|47ab171fde2026c25c0c63f0af9bfcee3fcd74a9
+vendor/lib64/libudf.so|00563b48abe3e19856133a87775363a9ef98c049
+
 # Audio
 vendor/etc/dirac/17061/diracmobile.config
 vendor/etc/dirac/17061/diracvdd.bin
@@ -2475,7 +2487,6 @@ vendor/lib/libaalservice.so
 vendor/lib/libaal_cust.so
 vendor/lib/libaal_key.so
 vendor/lib/libaal_mtk.so
-vendor/lib/libaedv.so
 vendor/lib/libakm.so
 vendor/lib/libalipay_factory.so
 vendor/lib/libaurisysdemo.so
@@ -2496,7 +2507,6 @@ vendor/lib/libcurl-ss.so
 vendor/lib/libcurl_xcap_md.so
 vendor/lib/libcustom_nvram.so
 vendor/lib/libcvsd_mtk.so
-vendor/lib/libdirect-coredump.so
 vendor/lib/libdpframework.so
 vendor/lib/libDR.so
 vendor/lib/libffmpeg_omx.so
@@ -2527,7 +2537,6 @@ vendor/lib/libjpeg-alpha-oal_vendor.so
 vendor/lib/libjpeg-alpha_vendor.so
 vendor/lib/libJpgDecPipe.so
 vendor/lib/libJpgEncPipe.so
-vendor/lib/libladder.so
 vendor/lib/liblic_divx.so
 vendor/lib/libMcClient.so
 vendor/lib/libmemtrack_GL.so
@@ -2602,7 +2611,6 @@ vendor/lib/libTBaseProvisioningAT.so
 vendor/lib/libTEECommon.so
 vendor/lib/libthha.so
 vendor/lib/libtqvalidate.so
-vendor/lib/libudf.so
 vendor/lib/libufwriter.so
 vendor/lib/libusc.so
 vendor/lib/libutinterface_custom_md.so
@@ -2659,7 +2667,6 @@ vendor/lib64/libaal_cust.so
 vendor/lib64/libaal_key.so
 vendor/lib64/libaal_mtk.so
 vendor/lib64/libacdk.so
-vendor/lib64/libaedv.so
 vendor/lib64/libakm.so
 vendor/lib64/libalipay_factory.so
 vendor/lib64/libaurisysdemo.so
@@ -2680,7 +2687,6 @@ vendor/lib64/libcurl-ss.so
 vendor/lib64/libcurl_xcap_md.so
 vendor/lib64/libcustom_nvram.so
 vendor/lib64/libcvsd_mtk.so
-vendor/lib64/libdirect-coredump.so
 vendor/lib64/libdpframework.so
 vendor/lib64/libeffecthal.base.so
 vendor/lib64/libem_camera_jni.so
@@ -2724,7 +2730,6 @@ vendor/lib64/libjpeg-alpha_vendor.so
 vendor/lib64/libJpgEncPipe.so
 vendor/lib64/libkmsetkey.so
 vendor/lib64/libksensor.so
-vendor/lib64/libladder.so
 vendor/lib64/liblpcnr.so
 vendor/lib64/libMcClient.so
 vendor/lib64/libmegface_rt_bokeh.so
@@ -2779,7 +2784,6 @@ vendor/lib64/libTEECommon.so
 vendor/lib64/libthha.so
 vendor/lib64/libtqvalidate.so
 vendor/lib64/libtrustonic_keybox_ca.so
-vendor/lib64/libudf.so
 vendor/lib64/libufwriter.so
 vendor/lib64/libusc.so
 vendor/lib64/libutinterface_custom_md.so
