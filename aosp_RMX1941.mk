@@ -30,9 +30,12 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 # Inherit from RMX1941 device makefile
 $(call inherit-product, device/realme/RMX1941/device.mk)
 
-# Dimen
+# Dimensions
 TARGET_SCREEN_HEIGHT := 1560
 TARGET_SCREEN_WIDTH := 720
+
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 720
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := RMX1941
