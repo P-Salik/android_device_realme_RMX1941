@@ -141,7 +141,8 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # WiFi
 PRODUCT_PACKAGES += \
-    WifiOverlay
+    WifiOverlay \
+    wpa_supplicant.conf
 
 # Do not spin up a separate process for the network stack, use an in-process APK.
 PRODUCT_PACKAGES += InProcessNetworkStack
