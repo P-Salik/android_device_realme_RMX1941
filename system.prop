@@ -58,6 +58,10 @@ debug.sf.early_gl_phase_offset_ns=3000000
 debug.sf.early_gl_app_phase_offset_ns=15000000 
 debug.sf.early_phase_offset_ns=500000 
 
+# IoRap
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
+
 # MTK Performance
 ro.mtk_perf_simple_start_win=1 
 ro.mtk_perf_fast_start_win=1 
