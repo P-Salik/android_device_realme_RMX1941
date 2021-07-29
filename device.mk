@@ -261,6 +261,7 @@ PRODUCT_PACKAGES += \
     init.oppo.wifi.debug.sh \
     oppo-install-recovery.sh \
     swap_enable.sh \
+    perf_profile.sh \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6765.rc \
