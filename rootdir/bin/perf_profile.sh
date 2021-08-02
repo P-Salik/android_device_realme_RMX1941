@@ -20,7 +20,6 @@ echo 0 > /proc/ppm/enabled
 echo 4 1 > /proc/ppm/policy_status
 
 # cpufreq mode
-echo 0 > /proc/cpufreq/cpufreq_cci_mode
 echo 0 > /proc/cpufreq/cpufreq_power_mode
 echo 0 > /sys/devices/system/cpu/perf/enable
 
@@ -37,10 +36,6 @@ echo 0 > /proc/gpufreq/gpufreq_opp_freq
 
 # set sched to hybrid (HMP,EAS)
 echo 2 > /sys/devices/system/cpu/eas/enable
-
-# schedutil rate-limit
-echo 1000 > /sys/devices/system/cpu/cpufreq/schedutil/down_rate_limit_us
-echo 1000 > /sys/devices/system/cpu/cpufreq/schedutil/up_rate_limit_us
 
 # cpusets
 echo 0-7 > /dev/cpuset/foreground/cpus
