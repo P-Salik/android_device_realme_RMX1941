@@ -46,7 +46,7 @@ PRODUCT_MANUFACTURER := realme
 PRODUCT_RELEASE_NAME := Realme C2
 
 # Build FP
-BUILD_FINGERPRINT := "google/sunfish/sunfish:11/RQ2A.210305.006/7119741:user/release-keys"
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210805.001.A1/7474174:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES := \
     TARGET_DEVICE=RMX1941 \
