@@ -48,6 +48,9 @@ dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=2m 
 dalvik.vm.heapmaxfree=8m
 
+# Zygote preforking
+persist.device_config.runtime_native.usap_pool_enabled=true
+
 # SurfaceFlinger
 debug.sf.disable_backpressure=1 
 debug.sf.disable_hwc_vds=1
