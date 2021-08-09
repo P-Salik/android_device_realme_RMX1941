@@ -345,26 +345,16 @@ vendor/etc/init/hw/init.oppo.vendor.motor.rc
 vendor/bin/hw/android.hardware.configstore@1.1-service
 vendor/etc/init/android.hardware.configstore@1.1-service.rc
 
-# DRM
+# DRM (Hardware) - from alps/vnd_oppo6765/oppo6765:11/RP1A.200720.011/1609743540423:user/release-keys
+vendor/bin/hw/android.hardware.drm@1.3-service.widevine|bb1ee465a6608d2704fbe9a787acbc7c4dc0aa85
+vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff19064a81e07c4be82ceaf4bb5
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml|ebebcf8f367641480cf7d512fc06e6ab777527be
 
-# DRM-Hardware
-vendor/bin/hw/android.hardware.drm@1.0-service
-vendor/bin/hw/android.hardware.drm@1.2-service.clearkey
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine
-vendor/etc/init/android.hardware.drm@1.0-service.rc
-vendor/etc/init/android.hardware.drm@1.2-service.clearkey.rc
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
-vendor/lib/hw/android.hardware.drm@1.0-impl.so
-
-# DRM-Widevine
-vendor/lib/libwvhidl.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libmockdrmcryptoplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib64/libwvhidl.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
-vendor/lib64/mediadrm/libwvdrmengine.so
+# DRM (Widevine) - from alps/vnd_oppo6765/oppo6765:11/RP1A.200720.011/1609743540423:user/release-keys
+vendor/lib/mediadrm/libwvdrmengine.so|caa4329a696f169c69eb944f8e41570e2e729324
+vendor/lib/libwvhidl.so|0e37b5958fc5033aa6f024ebfc323de8b7b515a5
+vendor/lib64/mediadrm/libwvdrmengine.so|a088fca89908396fd62dac0bc442e87a1224e4b2
+vendor/lib64/libwvhidl.so|52ca2868df2f84525c700032705aa70b656d2f04
 
 # Display-Hardware
 vendor/bin/hw/android.hardware.memtrack@1.0-service
