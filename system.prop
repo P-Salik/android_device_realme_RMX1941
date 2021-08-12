@@ -145,6 +145,9 @@ persist.radio.calls.on.ims=1
 media.stagefright.thumbnail.prefer_hw_codecs=true
 debug.stagefright.ccodec=0
 
+# Privapp permissions whitelisting
+ro.control_privapp_permissions=log
+
 # Zram-writeback
 ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
