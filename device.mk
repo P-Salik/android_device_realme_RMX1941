@@ -23,6 +23,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+PRODUCT_SHIPPING_API_LEVEL := 28
+
 # APNs
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
@@ -244,7 +246,8 @@ PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
 # VNDK
-PRODUCT_SHIPPING_API_LEVEL := 28
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmedia_helper-v29.so
 
 # WiFi
 PRODUCT_PACKAGES += \
