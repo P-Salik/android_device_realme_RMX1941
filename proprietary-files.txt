@@ -481,13 +481,7 @@ vendor/lib64/hw/gps.default.so
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service
 vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib/hw/gatekeeper.default.so
-vendor/lib/hw/gatekeeper.mt6765.so
-vendor/lib/hw/gatekeeper.oppo6762.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib64/hw/gatekeeper.default.so
-vendor/lib64/hw/gatekeeper.mt6765.so
-vendor/lib64/hw/gatekeeper.oppo6762.so
 
 # Graphics
 vendor/lib/egl/egl.cfg
@@ -520,16 +514,12 @@ vendor/bin/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-service
 vendor/etc/init/android.hardware.keymaster@3.0-service.trustonic.rc
 vendor/etc/init/vendor.mediatek.hardware.keymaster_attestation@1.1-service.rc
 vendor/lib/hw/android.hardware.keymaster@3.0-impl.so
-vendor/lib/hw/keystore.mt6765.so
-vendor/lib/hw/keystore.oppo6762.so
 vendor/lib/hw/libMcTeeKeymaster.so
 vendor/lib/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib/libkeymaster3device.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.0.so
 vendor/lib/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 vendor/lib64/hw/android.hardware.keymaster@3.0-impl.so
-vendor/lib64/hw/keystore.mt6765.so
-vendor/lib64/hw/keystore.oppo6762.so
 vendor/lib64/hw/libMcTeeKeymaster.so
 vendor/lib64/hw/vendor.mediatek.hardware.keymaster_attestation@1.1-impl.so
 vendor/lib64/libkeymaster3device.so
@@ -2524,7 +2514,6 @@ vendor/lib/gc5035_mipi_raw_tuning.so
 vendor/lib/hi1336_mipi_raw_tuning.so
 vendor/lib/hi556_mipi_raw_tuning.so
 vendor/lib/hw/flp.default.so
-vendor/lib/hw/kmsetkey.default.so
 vendor/lib/hw/kmsetkey.trustonic.so
 vendor/lib/hw/libMcGatekeeper.so
 vendor/lib/hw/libSoftGatekeeper.so
@@ -2694,7 +2683,6 @@ vendor/lib64/hi1336_mipi_raw_tuning.so
 vendor/lib64/hi556_mipi_raw_IdxMgr.so
 vendor/lib64/hi556_mipi_raw_tuning.so
 vendor/lib64/hw/flp.default.so
-vendor/lib64/hw/kmsetkey.default.so
 vendor/lib64/hw/kmsetkey.trustonic.so
 vendor/lib64/hw/libMcGatekeeper.so
 vendor/lib64/hw/libSoftGatekeeper.so
