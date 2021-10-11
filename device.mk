@@ -185,6 +185,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Radio
+PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.1 \
+    android.hardware.radio@1.5 \
+    android.hardware.radio.config@1.2 \
+    android.hardware.radio.deprecated@1.0
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     engineer_vendor_shell.sh \
