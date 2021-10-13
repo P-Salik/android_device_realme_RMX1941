@@ -315,6 +315,15 @@
         <fqname>@1.2::ISupplicant/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.mediatek.hardware.gpu</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGraphicExt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.mediatek.hardware.atci</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
