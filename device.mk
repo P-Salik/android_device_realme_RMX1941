@@ -31,9 +31,11 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.common@5.0-util \
+    android.hardware.audio@5.0.vendor \
+    android.hardware.audio.common@5.0-util.vendor \
     android.hardware.audio.effect@5.0-impl \
     android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.soundtrigger@2.2.vendor \
     audio.a2dp.default \
     audio.bluetooth.default \
     audio.r_submix.default \
@@ -60,14 +62,31 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.a2dp@1.0 \
+    android.hardware.bluetooth.a2dp@1.0.vendor \
+    android.hardware.bluetooth@1.0.vendor \
     libbtconfigstore \
     libldacBT_bco \
     libldacBT_dec
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.2.vendor \
+    android.hardware.camera.device@3.3.vendor \
+    android.hardware.camera.device@3.4.vendor \
+    android.hardware.camera.device@3.5.vendor \
+    android.hardware.camera.provider@2.4 \
+    android.hardware.camera.provider@2.4.vendor
 
 # Dependencies of kpoc_charger
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0 \
     libsuspend
+
+# DRM
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.2 \
+    android.hardware.drm@1.2.vendor
 
 # Display
 PRODUCT_PACKAGES += \
@@ -85,13 +104,19 @@ PRODUCT_COPY_FILES += \
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0.vendor
 
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
+
+# GPS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@2.0 \
+    android.hardware.gnss@2.0.vendor
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -100,6 +125,7 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0_system \
+    android.hidl.allocator@1.0.vendor \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
@@ -138,6 +164,10 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media/media_codecs_oppo_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_oppo_video.xml \
     $(DEVICE_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(DEVICE_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
+
+# Neutral Networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.2.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -180,7 +210,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.mt6765
+    android.hardware.power@1.3.vendor
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
@@ -188,10 +218,10 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    android.hardware.broadcastradio@1.1 \
-    android.hardware.radio@1.5 \
-    android.hardware.radio.config@1.2 \
-    android.hardware.radio.deprecated@1.0
+    android.hardware.broadcastradio@1.1.vendor \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -237,6 +267,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/configs/seccomp/mediaswcodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaswcodec.policy
 
+# Secure element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0.vendor
+
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0.vendor
 
 # Screen density
 PRODUCT_AAPT_CONFIG := xxxhdpi
@@ -264,6 +301,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.1.vendor
+
 # VNDK
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libmedia_helper.so:$(TARGET_COPY_OUT_VENDOR)/lib/libmedia_helper-v29.so \
@@ -272,6 +313,9 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.3.vendor \
+    android.hardware.wifi.supplicant@1.2.vendor \
+    android.hardware.wifi.hostapd@1.1.vendor \
     libkeystore-engine-wifi-hidl \
     libkeystore-wifi-hidl \
     WifiOverlay \
