@@ -23,6 +23,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# IMS
+$(call inherit-product, vendor/realme/RMX1941-ims/RMX1941-ims.mk)
+
 # Mediatek Common Kernel Headers
 $(call inherit-product, kernel/mediatek/common-headers/device.mk)
 
@@ -301,16 +304,6 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 # Symbols
 PRODUCT_PACKAGES += \
     libshim_vtservice
-
-# Telephony Jars
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    mediatek-framework \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common
 
 # Tethering
 PRODUCT_PACKAGES += \
