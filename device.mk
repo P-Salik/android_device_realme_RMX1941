@@ -60,8 +60,8 @@ PRODUCT_COPY_FILES += \
 
 # Dependencies of kpoc_charger
 PRODUCT_PACKAGES += \
-    libsuspend \
-    android.hardware.health@2.0
+    android.hardware.health@2.0 \
+    libsuspend
 
 # Display
 PRODUCT_PACKAGES += \
@@ -80,6 +80,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
+
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service
 
 # HIDL
 PRODUCT_PACKAGES += \
