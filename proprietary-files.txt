@@ -2081,6 +2081,13 @@ vendor/lib64/hw/android.hardware.vibrator@1.0-impl.so
 vendor/lib64/hw/vibrator.default.so
 
 # WiFi
+vendor/bin/hostapd_cli
+vendor/bin/hw/hostapd
+vendor/bin/hw/wpa_supplicant
+vendor/bin/wpa_cli
+vendor/etc/init/hostapd.android.rc
+vendor/lib/libwpa_client.so
+vendor/lib64/libwpa_client.so
 
 # rootdir
 vendor/bin/ccci_fsd
