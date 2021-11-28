@@ -2091,8 +2091,6 @@ vendor/bin/self-init
 vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
-vendor/etc/fstab.enableswap
-vendor/etc/fstab.mt6765
 vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/tee.rc
 vendor/etc/init/trustonic.rc
