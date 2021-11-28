@@ -70,6 +70,9 @@ function blob_fixup() {
         vendor/lib/libmtkcam_stdutils.so|vendor/lib64/libmtkcam_stdutils.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v29.so" "${2}"
             ;;
+        vendor/bin/hw/camerahalserver)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
+            ;;
     esac
 }
 
