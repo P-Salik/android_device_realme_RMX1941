@@ -1,1 +1,2 @@
 genfscon proc  /touchpanel u:object_r:proc_tp:s0
+genfscon proc /oppoVersion/prjVersion u:object_r:proc_oppo_ver:s0
