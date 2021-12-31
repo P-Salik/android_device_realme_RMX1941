@@ -312,6 +312,10 @@ PRODUCT_BOOT_JARS += \
     mediatek-telephony-base \
     mediatek-telephony-common
 
+# Symbols
+PRODUCT_PACKAGES += \
+    libshim_vtservice
+
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
