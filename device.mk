@@ -29,6 +29,9 @@ $(call inherit-product, vendor/realme/RMX1941-ims/RMX1941-ims.mk)
 # Mediatek Common Kernel Headers
 $(call inherit-product, kernel/mediatek/common-headers/device.mk)
 
+# Parts
+$(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
+
 PRODUCT_SHIPPING_API_LEVEL := 28
 
 # APNs
