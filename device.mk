@@ -160,7 +160,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.RMX1941
+    android.hardware.light-service.RMX1941
 
 # Media
 PRODUCT_COPY_FILES += \
