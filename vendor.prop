@@ -236,6 +236,7 @@ ro.vendor.mtk_widevine_drm_l3_support=1
 ro.vendor.mtk_world_phone_policy=0
 ro.vendor.mtk_zsdhdr_support=1
 ro.vendor.num_md_protocol=2
+ro.vendor.perf.scroll_opt=true
 ro.vendor.radio.max.multisim=dsds
 ro.vendor.sim_me_lock_mode=0
 ro.vendor.sim_refresh_reset_by_modem=1
