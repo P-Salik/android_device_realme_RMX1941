@@ -993,7 +993,6 @@ vendor/bin/fuelgauged
 vendor/bin/loghidlvendorservice
 vendor/bin/meta_tst
 vendor/bin/mnld
-vendor/bin/self-init
 vendor/bin/wlan_assistant
 vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
@@ -1171,7 +1170,6 @@ vendor/etc/init/mtk_agpsd_p.rc
 vendor/etc/init/muxreport.rc
 vendor/etc/init/netdagent.rc
 vendor/etc/init/ppl_agent.rc
-vendor/etc/init/self-init.rc
 vendor/etc/init/vendor.trustonic.tee@1.0-service.rc
 vendor/etc/init/vendor.trustonic.teeregistry@1.0-service.rc
 vendor/etc/init/vendor_engineermode.rc
