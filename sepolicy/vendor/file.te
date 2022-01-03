@@ -4,3 +4,6 @@ type sysfs_graphics, sysfs_type, fs_type, mlstrustedobject;
 type proc_oppo_ver, file_type;
 type oppo_devinfo_proc, file_type;
 type proc_oppo_opname, file_type;
+
+# Display node
+type vendor_sysfs_graphics, fs_type, sysfs_type;
