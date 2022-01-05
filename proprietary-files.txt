@@ -343,6 +343,9 @@ vendor/etc/camera/M_Attribute_Gender_Age_1.0.model
 # Camera-motor
 vendor/etc/init/hw/init.oppo.vendor.motor.rc
 
+# Charger - From Redmi/merlin/merlin:11/RP1A.200720.011/V12.5.1.0.RJOMIXM:user/release-keys
+bin/charger:bin/chargeonlymode|eeb5a0e80057cce782b4555389310e83a408ad37
+
 # Configstore
 vendor/bin/hw/android.hardware.configstore@1.1-service
 vendor/etc/init/android.hardware.configstore@1.1-service.rc
@@ -473,12 +476,6 @@ vendor/lib64/egl/libGLESv2_mtk.so
 vendor/lib64/egl/libGLES_meow.so
 vendor/lib64/egl/libMEOW_trace.so
 vendor/lib64/libOpenCL.so
-
-# Kernel Power Offline Charging (KPOC)
-bin/kpoc_charger
-etc/init/kpoc_charger.rc
-lib/libshowlogo.so
-lib/libsysenv_system.so
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@3.0-service.trustonic

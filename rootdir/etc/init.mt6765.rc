@@ -1128,6 +1128,14 @@ service prop-adap-main-gsi /vendor/bin/self-init gsimain
     group root system radio
     oneshot
 
+# Charger
+service charger /system/bin/chargeonlymode
+    class charger
+    critical
+    #seclabel u:r:charger:s0
+    group system graphics
+    seclabel u:r:healthd:s0
+
 on property:ro.oppo.reconcile_media_resource=1
     start media-resource-reconciliation
 #endif
