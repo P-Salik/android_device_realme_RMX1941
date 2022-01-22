@@ -61,6 +61,9 @@ function blob_fixup() {
         vendor/lib/hw/audio.primary.mt6765.so)
             "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
             ;;
+        vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek|vendor/bin/hw/hostapd|vendor/bin/hw/wpa_supplicant)
+            "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
+            ;;
     esac
 }
 
