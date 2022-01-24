@@ -24,7 +24,7 @@ service md_minilog_util /vendor/bin/md_minilog_util
     disabled
     oneshot
 
-#VIA RILD service
+# VIA RILD service
 service viarild /vendor/bin/viarild -l /vendor/lib/libviatelecom-withuim-ril.so -- -d /dev/ttySDIO4
     class core
     socket rild-via stream 660 radio radio
@@ -56,7 +56,7 @@ service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepe
     disabled
     oneshot
 
-#Add by T.Zh for ppp daemon
+# Add by T.Zh for ppp daemon
 service pppd /system/bin/pppd file /data/misc/ppp/ppp_options
     user root
     disabled 
