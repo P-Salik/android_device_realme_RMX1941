@@ -65,16 +65,6 @@ on late-init
     write /sys/kernel/rcu_expedited 1
 
 on charger
-    write /proc/hps/enabled 0
-    write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpu1/online 1
-    write /sys/devices/system/cpu/cpu2/online 1
-    write /sys/devices/system/cpu/cpu3/online 1
-    write /sys/devices/system/cpu/cpu7/online 0
-    write /sys/devices/system/cpu/cpu6/online 0
-    write /sys/devices/system/cpu/cpu5/online 0
-    write /sys/devices/system/cpu/cpu4/online 0
-
     exec /system/bin/e2fsck -f -p /dev/block/platform/bootdevice/by-name/cache
     mount ext4 /dev/block/platform/bootdevice/by-name/cache /cache rw wait
     chmod 0666 /dev/kmsg
@@ -105,8 +95,7 @@ on charger
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
 
-    start servicemanager
-    start hwservicemanager
+    start vendor.light-default
 
 on fs
     write /proc/bootprof "INIT:Mount_START"
