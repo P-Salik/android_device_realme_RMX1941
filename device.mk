@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml \
 
-# Audio 
+# Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
     $(DEVICE_PATH)/configs/audio/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
@@ -46,7 +46,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libsuspend \
     android.hardware.health@2.0
-    
+
 # FSTAB
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765
@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
-    libhwbinder.vendor    
+    libhwbinder.vendor
 
 # Input/DT2W
 PRODUCT_COPY_FILES += \
@@ -128,6 +128,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     power.mt6765
 
+# Public Libraries
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.target.rc \
@@ -162,15 +166,11 @@ PRODUCT_BOOT_JARS += \
     mediatek-ims-common \
     mediatek-telecom-common \
     mediatek-telephony-base \
-    mediatek-telephony-common    
+    mediatek-telephony-common
 
 # Tethering
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
-
-# Trustonic TEE
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/public.libraries-trustonic.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/public.libraries-trustonic.txt
 
 # VNDK
 PRODUCT_SHIPPING_API_LEVEL := 28
