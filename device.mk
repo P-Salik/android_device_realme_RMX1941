@@ -300,7 +300,7 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # Symbols
 PRODUCT_PACKAGES += \
-    libshim_showlogo
+    libshim_vtservice
 
 # Telephony Jars
 PRODUCT_BOOT_JARS += \
@@ -311,10 +311,6 @@ PRODUCT_BOOT_JARS += \
     mediatek-telecom-common \
     mediatek-telephony-base \
     mediatek-telephony-common
-
-# Symbols
-PRODUCT_PACKAGES += \
-    libshim_vtservice
 
 # Tethering
 PRODUCT_PACKAGES += \
