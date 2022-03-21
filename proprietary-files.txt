@@ -895,26 +895,12 @@ vendor/lib64/vendor.oppo.hardware.ktv@1.0.so
 vendor/lib64/vendor.oppo.hardware.oiface@1.0.so
 vendor/lib64/vendor.oppo.hardware.wifi.hostapd@1.0.so
 vendor/lib64/vendor.oppo.hardware.wifi.supplicant@1.0.so
-vendor/oppo/ck.fs
-vendor/oppo/recovery_rootcheck
-vendor/oppoex/ld.config.oppo.txt
--vendor/overlay/OppoGmailOverlay.apk
--vendor/overlay/OppoPermissionControllerOverlay/OppoPermissionControllerOverlay.apk
--vendor/overlay/OppoPhoneActivationResCommon.apk
-
-# Perf
-
-# Postprocessing
 
 # Power-Hardware
 vendor/lib/hw/power.default.so
 vendor/lib/hw/power.mt6765.so
 vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.mt6765.so
-
-# QMI
-
-# Radio
 
 # Sensors
 vendor/lib/libsensorndkbridge.so
@@ -950,8 +936,6 @@ vendor/lib/libthermalalgo.so
 # Thermal-Hardware
 vendor/lib/hw/thermal.mt6765.so
 vendor/lib64/hw/thermal.mt6765.so
-
-# Time
 
 # Trustonic TEE
 lib/libMcRegistry.so
@@ -1000,7 +984,6 @@ vendor/etc/init/nvram_daemon.rc
 vendor/etc/init/tee.rc
 vendor/etc/init/trustonic.rc
 vendor/etc/partition_permission.sh
-vendor/recovery-from-boot.p
 
 # Misc
 -vendor/app/EmCamera/EmCamera.apk
