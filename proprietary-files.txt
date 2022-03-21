@@ -370,25 +370,6 @@ vendor/lib64/hw/hwcomposer.mt6765.so
 vendor/lib64/hw/memtrack.mt6765.so
 vendor/lib64/libdrm.so
 
-# Fingerprint
-vendor/bin/hw/vendor.oppo.hardware.biometrics.face@1.0-service
-vendor/bin/hw/vendor.oppo.hardware.biometrics.fingerprintpay@1.0-service
-vendor/etc/init/vendor.oppo.hardware.biometrics.face@1.0-service.rc
-vendor/etc/init/vendor.oppo.hardware.biometrics.fingerprintpay@1.0-service.rc
-vendor/etc/permissions/vendor-oppo-hardware.biometrics.fingerprintpay.xml
-vendor/lib/hw/fingerprint.silead.default.so
-vendor/lib/libsl_fp_algo.so
-vendor/lib/libsl_fp_impl.so
-vendor/lib/libsl_fp_nosec.so
-vendor/lib/libsl_fp_prepro.so
-vendor/lib/vendor.oppo.hardware.biometrics.face@1.0.so
-vendor/lib64/hw/fingerprint.silead.default.so
-vendor/lib64/libsl_fp_algo.so
-vendor/lib64/libsl_fp_impl.so
-vendor/lib64/libsl_fp_nosec.so
-vendor/lib64/libsl_fp_prepro.so
-vendor/lib64/vendor.oppo.hardware.biometrics.fingerprintpay@1.0.so
-
 # Firmware
 etc/firmware/hx_criteria.csv
 vendor/firmware/BT_FW.cfg
