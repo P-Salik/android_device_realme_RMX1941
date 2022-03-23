@@ -17,6 +17,7 @@ key 62    ENDCALL
 key 229   MENU
 key 139   MENU
 key 59    MENU
+key 62    WAKEUP
 key 127   SYM
 key 217   SEARCH
 key 228   POUND
