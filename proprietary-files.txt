@@ -337,7 +337,7 @@ vendor/etc/camera/M_Attribute_Gender_Age_1.0.model
 # Camera-motor
 vendor/etc/init/hw/init.oppo.vendor.motor.rc
 
-# Charger - From Redmi/merlin/merlin:11/RP1A.200720.011/V12.5.1.0.RJOMIXM:user/release-keys
+# Charger - from Redmi/merlin/merlin:11/RP1A.200720.011/V12.5.1.0.RJOMIXM:user/release-keys
 bin/charger:bin/chargeonlymode|eeb5a0e80057cce782b4555389310e83a408ad37
 
 # DRM (Hardware) - from alps/vnd_oppo6765/oppo6765:11/RP1A.200720.011/1609743540423:user/release-keys
@@ -713,7 +713,6 @@ lib/libmtklimiter.so
 lib/libmtkperf_client.so
 lib/libmtkshifter.so
 lib/libsignal.so
-lib/libsink.so
 lib/libsource.so
 lib/libvcodec_cap.so
 lib/libvcodec_capenc.so
@@ -729,14 +728,16 @@ lib64/libvcodec_cap.so
 lib64/libvcodec_capenc.so
 lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 
-# MTK-IMS | From bomb RP1A.200720.011 release-keys
+# MTK-IMS - from alps/vnd_oppo6765/oppo6765:11/RP1A.200720.011/1609743540423:user/release-keys
+lib/libsink.so|6df52b0136dd66de1a70f7c284df28f8e979d37c
+
+# MTK-IMS - from bomb RP1A.200720.011 release-keys
 lib/libcomutils.so|be7c7b0901119cb260186061b90ef5b6a8292ae2
 lib/libimsma.so|c9e524600acb37296d7c73aa9db56d21e1a88d5b
 lib/libimsma_adapt.so|25159303e5d6404f08bda6456c8fcc2150005a9b
 lib/libimsma_rtp.so|ce2515dfb4802b4c6a121bae848e57342f0d43b9
 lib/libimsma_socketwrapper.so|5c63d8ec795fd0b7b9efcdc1adf4d81c5853c73a
 lib/libsignal.so|e008452949ea9bf486bf9892f024f82edcec5819
-lib/libsink.so|00e2ec0cc399e5411ffa35dbfc0d0d3c17ecc7df
 lib/libsource.so|0e01c6c5d76e21629463d1f94d28d1b8f91c4c30
 system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so|ecb6326c2a040b930a6bfc744ca761b7856154cd
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|5ed11753481998f26a6e39a9bd270dac3f0da46f
