@@ -1,3 +1,5 @@
+allow init property_type:file { append create getattr map open read relabelto rename setattr unlink write };
+
 # Allow init to read perf_profile prop
 get_prop(init, perf_prop)
 
