@@ -43,8 +43,6 @@ vendor/etc/dirac/20682/diracmobile.config
 vendor/etc/dirac/20682/diracvdd.bin
 vendor/etc/diracmobile.config
 vendor/etc/diracvdd.bin
-vendor/lib/soundfx/libaudiopreprocessing.so
-vendor/lib/soundfx/libdirac.so
 vendor/lib/libDiracAPI_SHARED.so
 vendor/lib/libaudio_engineer_test.so
 vendor/lib/libaudio_param_parser-vnd.so
@@ -76,26 +74,21 @@ vendor/lib64/libaudioprimarydevicehalifclient.so
 vendor/lib64/libaudiotoolkit_vendor.so
 vendor/lib64/libaudio_engineer_test.so
 vendor/lib64/libaudio_param_parser-vnd.so
-vendor/lib64/soundfx/libaudiopreprocessing.so
 
-# Audio-Hardware
+# Audio (Hardware)
 vendor/bin/hw/android.hardware.audio@5.0-service-mediatek
 vendor/etc/init/android.hardware.audio@5.0-service-mediatek.rc
 vendor/lib/android.hardware.audio.common-util.so
 vendor/lib/hw/android.hardware.audio@5.0-impl-mediatek.so
-vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mt6765.so
 vendor/lib/hw/audio.r_submix.mt6765.so
 vendor/lib/hw/audio.usb.mt6765.so
-vendor/lib/hw/audio_policy.stub.so
 vendor/lib/vendor.mediatek.hardware.audio@5.1.so
 vendor/lib64/android.hardware.audio.common-util.so
 vendor/lib64/hw/android.hardware.audio@5.0-impl-mediatek.so
-vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.mt6765.so
 vendor/lib64/hw/audio.r_submix.mt6765.so
 vendor/lib64/hw/audio.usb.mt6765.so
-vendor/lib64/hw/audio_policy.stub.so
 vendor/lib64/vendor.mediatek.hardware.audio@5.1.so
 
 # Bluetooth
@@ -351,16 +344,10 @@ vendor/lib/libwvhidl.so|0e37b5958fc5033aa6f024ebfc323de8b7b515a5
 vendor/lib64/mediadrm/libwvdrmengine.so|a088fca89908396fd62dac0bc442e87a1224e4b2
 vendor/lib64/libwvhidl.so|52ca2868df2f84525c700032705aa70b656d2f04
 
-# Display-Hardware
-vendor/bin/hw/android.hardware.memtrack@1.0-service
-vendor/etc/init/android.hardware.memtrack@1.0-service.rc
-vendor/lib/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib/hw/gralloc.default.so
+# Display (Hardware)
 vendor/lib/hw/gralloc.mt6765.so
 vendor/lib/hw/memtrack.mt6765.so
 vendor/lib/libdrm.so
-vendor/lib64/hw/android.hardware.memtrack@1.0-impl.so
-vendor/lib64/hw/gralloc.default.so
 vendor/lib64/hw/gralloc.mt6765.so
 vendor/lib64/hw/hwcomposer.mt6765.so
 vendor/lib64/hw/memtrack.mt6765.so
@@ -476,9 +463,6 @@ vendor/lib64/vendor.mediatek.hardware.keymaster_attestation@1.1.so
 # Listen
 vendor/lib/hw/sound_trigger.primary.mt6765.so
 vendor/lib64/hw/sound_trigger.primary.mt6765.so
-
-# Media
-vendor/lib/libstagefright_soft_mpeg2dec.so
 
 # Media-Hardware
 vendor/lib/libstagefrighthw.so
@@ -892,10 +876,8 @@ vendor/lib64/hw/power.default.so
 vendor/lib64/hw/power.mt6765.so
 
 # Sensors
-vendor/lib/libsensorndkbridge.so
 vendor/lib/sensors.ap.so
 vendor/lib64/hw/sensors.mt6765.so
-vendor/lib64/libsensorndkbridge.so
 vendor/lib64/libsensor_custom.so
 vendor/lib64/sensors.ap.so
 
@@ -1430,32 +1412,6 @@ vendor/lib/libspeechparser_vendor.so
 vendor/lib/libspeech_enh_lib.so
 vendor/lib/libsrv_um.so
 vendor/lib/libssl-ss.so
-vendor/lib/libstagefright_amrnb_common.so
-vendor/lib/libstagefright_enc_common.so
-vendor/lib/libstagefright_flacdec.so
-vendor/lib/libstagefright_softomx.so
-vendor/lib/libstagefright_softomx_plugin.so
-vendor/lib/libstagefright_soft_aacdec.so
-vendor/lib/libstagefright_soft_aacenc.so
-vendor/lib/libstagefright_soft_amrdec.so
-vendor/lib/libstagefright_soft_amrnbenc.so
-vendor/lib/libstagefright_soft_amrwbenc.so
-vendor/lib/libstagefright_soft_avcdec.so
-vendor/lib/libstagefright_soft_avcenc.so
-vendor/lib/libstagefright_soft_flacdec.so
-vendor/lib/libstagefright_soft_flacenc.so
-vendor/lib/libstagefright_soft_g711dec.so
-vendor/lib/libstagefright_soft_gsmdec.so
-vendor/lib/libstagefright_soft_hevcdec.so
-vendor/lib/libstagefright_soft_mp3dec.so
-vendor/lib/libstagefright_soft_mpeg4dec.so
-vendor/lib/libstagefright_soft_mpeg4enc.so
-vendor/lib/libstagefright_soft_opusdec.so
-vendor/lib/libstagefright_soft_rawdec.so
-vendor/lib/libstagefright_soft_voh264enc.so
-vendor/lib/libstagefright_soft_vorbisdec.so
-vendor/lib/libstagefright_soft_vpxdec.so
-vendor/lib/libstagefright_soft_vpxenc.so
 vendor/lib/libstfaceunlockocl.so
 vendor/lib/libstorage_otp.so
 vendor/lib/libstrongswan.so
@@ -1480,10 +1436,8 @@ vendor/lib/libverno.so
 vendor/lib/libvoh264enc.so
 vendor/lib/libvolte_core_shr.so
 vendor/lib/libvolte_xdmc_shr.so
-vendor/lib/libvorbisidec.so
 vendor/lib/libvp8dec_sa.ca7.so
 vendor/lib/libvp9dec_sa.ca7.so
-vendor/lib/libvpx.so
 vendor/lib/libvt_custom.so
 vendor/lib/libWaterMark.so
 vendor/lib/libwo.so
@@ -1627,8 +1581,6 @@ vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/libspeech_enh_lib.so
 vendor/lib64/libsrv_um.so
 vendor/lib64/libssl-ss.so
-vendor/lib64/libstagefright_softomx.so
-vendor/lib64/libstagefright_soft_voh264enc.so
 vendor/lib64/libstereoinfoaccessor_vsdof.so
 vendor/lib64/libstface_fd_api.so
 vendor/lib64/libstrongswan.so
