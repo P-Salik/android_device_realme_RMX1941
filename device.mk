@@ -27,7 +27,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, vendor/realme/RMX1941-ims/RMX1941-ims.mk)
 
 # Parts
-$(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
+$(call inherit-product, $(DEVICE_PATH)/RealmeParts/parts.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 28
 
