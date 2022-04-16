@@ -26,9 +26,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # IMS
 $(call inherit-product, vendor/realme/RMX1941-ims/RMX1941-ims.mk)
 
-# Mediatek Common Kernel Headers
-$(call inherit-product, kernel/mediatek/common-headers/device.mk)
-
 # Parts
 $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
 
