@@ -1106,20 +1106,3 @@ on property:sys.boot_completed=1
 on property:sys.boot_completed=1
     chmod +x /system/etc/swap_enable.sh
     start swap_enable
-
-# Include logger service
-service logger /system/bin/logcat -b all -D -f /cache/boot_log.txt
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
-on post-fs-data
-    # Clear existing log and start the service
-    rm /cache/boot_log.txt
-    start logger
-
-on property:sys.boot_completed=1
-    # Stop the logger service
-    stop logger
