@@ -291,16 +291,6 @@
         <fqname>@2.0::ISupplicant/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.oppo.engnative.engineer</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IEngineer/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oppo.engnative.engsensor</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IEngSensor/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.oppo.hardware.biometrics.face</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IBiometricsFace/default</fqname>
@@ -314,16 +304,6 @@
         <name>vendor.oppo.hardware.camera.slogan</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::ISlogan/internal/0</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oppo.hardware.cryptoeng</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::ICryptoeng/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.oppo.hardware.hypnus</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IHypnusUtil/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.oppo.hardware.ktv</name>
