@@ -1290,7 +1290,6 @@ vendor/etc/security/cacerts_supl/lab/ed7b215e.0
 vendor/etc/security/cacerts_supl/lab/ef4b31e6.0
 vendor/etc/security/ck.fs
 vendor/etc/security/pl.fs
-vendor/etc/self_init_config/common/self_init_config.xml
 vendor/etc/slp_conf
 vendor/etc/smsdbvisitor.xml
 vendor/etc/special_pws_channel.xml
