@@ -403,12 +403,6 @@ vendor/firmware/tp/18540/Himax_firmware.bin
 vendor/firmware/tp/18540/Himax_firmware_signed.bin
 vendor/firmware/tp/18540/touch_FT5446_fw.bin
 vendor/firmware/tp/18540/touch_FT5446_fw_signed.bin
-vendor/firmware/ufs/move_target_ufs_fw_to_opporeserve1.sh
-vendor/firmware/ufs/SAMSUNG-KM2H7001CM-B518.bin
-vendor/firmware/ufs/SAMSUNG-KM8V7001JM-B810.bin
-vendor/firmware/ufs/SKhynix-H9HQ16AECMMDAR.bin
-vendor/firmware/ufs/SKhynix-H9HQ16AFAMMDAR.bin
-vendor/firmware/ufs/SKhynix-H9HQ53AECMMDAR.bin
 vendor/firmware/WIFI_RAM_CODE_soc1_0_1_1.bin
 vendor/firmware/WMT_SOC.cfg
 
