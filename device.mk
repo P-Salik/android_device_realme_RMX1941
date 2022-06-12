@@ -25,6 +25,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # IMS
 $(call inherit-product, vendor/realme/RMX1941-ims/RMX1941-ims.mk)
 
+# Dynamic Partition
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 28
 
@@ -70,7 +74,7 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.a2dp@1.0 \
     android.hardware.bluetooth.a2dp@1.0.vendor \
     android.hardware.bluetooth@1.0.vendor \
-    libbtconfigstore 
+    libbtconfigstore
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -106,7 +110,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0.vendor
-    
+
 # FSTAB
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765
