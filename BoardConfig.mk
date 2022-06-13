@@ -59,8 +59,8 @@ TARGET_SCREEN_WIDTH := 720
 TARGET_ENABLE_MEDIADRM_64 := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true

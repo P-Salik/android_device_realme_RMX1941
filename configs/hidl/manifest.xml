@@ -55,10 +55,6 @@
         <transport>hwbinder</transport>
         <fqname>@3.0::IKeymasterDevice/default</fqname>
     </hal>
-    <hal format="aidl">
-        <name>android.hardware.light</name>
-        <fqname>ILights/default</fqname>
-    </hal>
     <hal format="hidl">
         <name>android.hardware.media.omx</name>
         <transport>hwbinder</transport>

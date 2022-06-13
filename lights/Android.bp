@@ -18,6 +18,7 @@ cc_binary {
     name: "android.hardware.light-service.RMX1941",
     proprietary: true,
     init_rc: ["android.hardware.light-service.RMX1941.rc"],
+    vintf_fragments: ["android.hardware.light-service.RMX1941.xml"],
     srcs: ["main.cpp", "Light.cpp"],
     shared_libs: [
         "libhardware",
