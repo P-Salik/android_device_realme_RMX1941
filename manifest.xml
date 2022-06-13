@@ -145,7 +145,8 @@
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.gpu</name>
-        <transport>hwbinder</transport>
+	<transport>hwbinder</transport>
+	<fqname>@1.0::IGraphicExt/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.mediatek.hardware.atci</name>
