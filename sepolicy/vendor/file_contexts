@@ -1,8 +1,11 @@
 # Light
-/vendor/bin/hw/android\.hardware\.light-service\.RMX1941      u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.light-service\.RMX1941                                                u:object_r:hal_light_default_exec:s0
 
 # CryptoEng
 /vendor/bin/hw/vendor\.oppo\.hardware\.cryptoeng@1\.0-service                                           u:object_r:hal_cryptoeng_default_exec:s0
 
 # Hypnus
 /vendor/bin/hw/vendor\.oppo\.hardware\.hypnus@1\.0-service                                              u:object_r:hal_hypnus_default_exec:s0
+
+# Swap Service
+/system/etc/swap_enable.sh                                                                              u:object_r:swap_enable_exec:s0
