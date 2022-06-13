@@ -19,3 +19,6 @@ odm.ril.radio.status.sim2  u:object_r:oppo_network_prop:s0
 # Audio
 audio.tuning.def_path                       u:object_r:audio_tunning_prop:s0
 persist.vendor.audio.tuning.def_path        u:object_r:audio_tunning_prop:s0
+
+# Fastbootd
+ro.fastbootd.available                 u:object_r:exported_default_prop:s0
