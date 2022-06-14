@@ -1,4 +1,3 @@
-
 #
 # Copyright (C) 2021 Android Open Source Project
 #
@@ -243,7 +242,7 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-lite-vendorcompat
 
 # Properties
--include $(DEVICE_PATH)/vendor_logging_prop.mk
+-include $(DEVICE_PATH)/configs/props/vendor_logging_prop.mk
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
 # Public Libraries
