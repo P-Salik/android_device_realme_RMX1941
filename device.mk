@@ -25,9 +25,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # IMS
 $(call inherit-product, vendor/realme/RMX1941-ims/RMX1941-ims.mk)
 
-# Parts
-$(call inherit-product, $(DEVICE_PATH)/RealmeParts/parts.mk)
-
+# Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 28
 
 # APNs
@@ -274,6 +272,11 @@ PRODUCT_PACKAGES += \
     init.sensor_1_0.rc \
     fstab.mt6765 \
     ueventd.mt6765.rc
+
+# Realme
+PRODUCT_PACKAGES += \
+    RealmeDirac \
+    RealmeParts
 
 # RenderScript
 PRODUCT_PACKAGES += \
