@@ -1,0 +1,2 @@
+# OPPO
+vendor.oppo.hardware.wifi.hostapd::IOppoHostapd u:object_r:hal_oppo_hostapd_hwservice:s0
