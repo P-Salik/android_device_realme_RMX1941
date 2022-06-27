@@ -272,7 +272,6 @@ PRODUCT_PACKAGES += \
     init.oppo.face_calib.sh \
     init.oppo.wifi.debug.sh \
     oppo-install-recovery.sh \
-    swap_enable.sh \
     perf_profile.sh \
     init.connectivity.rc \
     init.modem.rc \
