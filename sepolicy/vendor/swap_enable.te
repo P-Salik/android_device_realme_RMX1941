@@ -1,5 +1,0 @@
-# Swap enable service
-type swap_enable, domain;
-type swap_enable_exec, exec_type, file_type;
-
-init_daemon_domain(swap_enable)

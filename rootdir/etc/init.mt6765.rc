@@ -113,12 +113,6 @@ on charger
     start servicemanager
     start hwservicemanager
 
-service swap_enable /system/etc/swap_enable.sh
-    user root
-    disabled
-    oneshot
-    seclabel u:r:swap_enable:s0
-
 on fs
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
@@ -1084,8 +1078,3 @@ on property:perf_profile=0
 on property:sys.boot_completed=1
     chown root root /sys/module/ged/parameters/gx_force_cpu_boost
     chown root root /proc/cpufreq/cpufreq_power_mode
-
-# Swap enable
-on property:sys.boot_completed=1
-    chmod +x /system/etc/swap_enable.sh
-    start swap_enable
