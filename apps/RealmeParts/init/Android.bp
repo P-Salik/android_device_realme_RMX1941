@@ -3,3 +3,8 @@ prebuilt_etc {
     src: "parts.rc",
     sub_dir: "init",
 }
+
+sh_binary {
+    name: "perf_profile.sh",
+    src: "perf_profile.sh",
+}

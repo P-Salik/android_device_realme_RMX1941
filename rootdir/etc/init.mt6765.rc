@@ -527,11 +527,6 @@ on boot
     # Enable oppo touchpanel direction
     write /proc/touchpanel/oppo_tp_direction 1
 
-    # OTG
-    chown system system /sys/class/power_supply/usb/otg_switch
-    chmod 0660 /sys/class/power_supply/usb/otg_switch
-    write /sys/class/power_supply/usb/otg_switch 1
-
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 

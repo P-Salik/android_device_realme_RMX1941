@@ -257,7 +257,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.oppo.wifi.debug.sh \
-    perf_profile.sh \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6765.rc \
@@ -270,6 +269,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RealmeDirac \
     RealmeParts
+
+PRODUCT_PACKAGES += \
+    parts.rc \
+    perf_profile.sh
 
 # Recovery
 PRODUCT_PACKAGES += \
