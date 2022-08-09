@@ -64,29 +64,33 @@ function blob_fixup() {
         vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek)
             "${PATCHELF}" --replace-needed "libwifi-hal.so" "libwifi-hal-mtk.so" "${2}"
             ;;
-        vendor/lib/hw/audio.primary.mt6765.so)
-            "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
-            ;;
         vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek|vendor/bin/hw/hostapd|vendor/bin/hw/wpa_supplicant)
             "${PATCHELF}" --add-needed "libcompiler_rt.so" "${2}"
+            ;;
+	vendor/bin/hw/camerahalserver)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
             ;;
         vendor/bin/hw/camerasloganserver)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v29.so" "${2}"
             ;;
-        vendor/lib/libmtkcam_stdutils.so|vendor/lib64/libmtkcam_stdutils.so)
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v29.so" "${2}"
+	vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc)                         sed -i '/vts/Q' "$2"
             ;;
-        vendor/bin/hw/camerahalserver)
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
+	vendor/lib/hw/audio.primary.mt6765.so)
+            "${PATCHELF}" --replace-needed "libmedia_helper.so" "libmedia_helper-v29.so" "${2}"
             ;;
 	vendor/lib/libMtkOmxVdecEx.so)
             "${PATCHELF}" --replace-needed "libui.so" "libui-v32.so" "$2"
             ;;
-        vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc)
-            sed -i '/vts/Q' "$2"
+        vendor/lib/libmtkcam_stdutils.so|vendor/lib64/libmtkcam_stdutils.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v29.so" "${2}"
             ;;
         vendor/lib64/hw/vendor.mediatek.hardware.pq@2.3-impl.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
+            ;;
+	vendor/lib64/libmtkcam_featurepolicy.so)
+            # evaluateCaptureConfiguration()
+            xxd -p "${2}" | sed "s/90e0034e87740b9/90e003428028052/g" | xxd -r -p > "${2}".patched
+            mv "${2}".patched "${2}"
             ;;
     esac
 }
