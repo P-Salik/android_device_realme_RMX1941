@@ -1,2 +1,5 @@
 # Light
-/vendor/bin/hw/android\.hardware\.light-service\.RMX1941                                                u:object_r:hal_light_default_exec:s0
+/vendor/bin/hw/android\.hardware\.light-service\.RMX1941                        u:object_r:hal_light_default_exec:s0
+
+# Vibrator
+/vendor/bin/hw/android\.hardware\.vibrator-service\.mediatek                    u:object_r:hal_vibrator_default_exec:s0
