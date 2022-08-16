@@ -79,6 +79,9 @@ function blob_fixup() {
         vendor/etc/init/android.hardware.bluetooth@1.0-service-mediatek.rc)
             sed -i '/vts/Q' "$2"
             ;;
+        vendor/lib64/hw/vendor.mediatek.hardware.pq@2.3-impl.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v30.so" "${2}"
+            ;;
     esac
 }
 
