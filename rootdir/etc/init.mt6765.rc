@@ -8,7 +8,6 @@ import vendor/etc/init/hw/init.mal.rc
 import vendor/etc/init/hw/init.sensor_1_0.rc
 import /init.oppo.face.rc
 import /init.oppo.seccommon.rc
-#endif
 
 # init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
 import vendor/etc/init/hw/init.modem.rc
@@ -16,10 +15,12 @@ import vendor/etc/init/hw/init.modem.rc
 on early-init
     write /proc/bootprof "INIT:early-init"
     # boot perf. tune
+
 # ifdef ODM_WT_EDIT
 # Qun.Lin@ODM_WT.Memroy.Performance, 2020/05/08, limit cpu to max core and freq during booting up
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "0 0 0 0"
 # endif /*ODM_WT_EDIT*/
+
     write /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_req_ddr_opp 0
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
@@ -34,34 +35,35 @@ on init
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
 
-# Temp Backward compatibility
+    # Temp Backward compatibility
     mkdir /mnt/vendor/protect_f 0771 system system
     mkdir /mnt/vendor/protect_s 0771 system system
     mkdir /mnt/vendor/nvcfg 0771 system system
 
-# Create nvdata mount point
+    # Create nvdata mount point
     mkdir /mnt/vendor/nvdata 0771 system system
-# Create CIP mount point
+
+    # Create CIP mount point
     mkdir /custom
 
     mkdir /mnt/cd-rom 0000 system system
 
-# Change lk_env permission
+    # Change lk_env permission
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
 
-# increase sysctl_rmem_max and sysctl_wmem_max values to 2M
+    # increase sysctl_rmem_max and sysctl_wmem_max values to 2M
     write /proc/sys/net/core/wmem_max 8388608
     write /proc/sys/net/core/rmem_max 8388608
 
-# update cpus for cpuset cgroup
+    # update cpus for cpuset cgroup
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 4-7
     write /dev/cpuset/system-background/cpus 2-7
     write /dev/cpuset/top-app/cpus 0-7
 
-# update bg rt_runtime 100ms
+    # update bg rt_runtime 100ms
     write /dev/cpuctl/bg_non_interactive/cpu.rt_runtime_us 100000
 
 on late-init
@@ -92,6 +94,7 @@ on charger
     restorecon_recursive /mnt/vendor/nvcfg
     write /sys/devices/platform/battery_meter/FG_daemon_log_level 7
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
+
     # Permissions for System Server and daemons.
     chown system system /sys/power/autosleep
     chown system system /sys/power/state
@@ -116,6 +119,7 @@ on charger
 on fs
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
+
     #Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
     mkdir /mnt/vendor/opporeserve 0771 system system
     wait_for_prop hwservicemanager.ready "true"
@@ -124,18 +128,14 @@ on fs
     write /sys/kernel/debug/tracing/trace_marker "E"
     write /proc/bootprof "INIT:Mount_END"
 
-write /sys/block/zram0/comp_algorithm lz4
+    write /sys/block/zram0/comp_algorithm lz4
     write /proc/sys/vm/page-cluster 0
     write /proc/sys/vm/swappiness 160
     write /proc/sys/vm/direct_swappiness 60
     write /sys/kernel/mm/swap/vma_ra_enabled false
     write /sys/block/zram0/disksize 2147483648
 
-    swapon_all /fstab.mt6765
-
-on fs
-
-   mount iso9660 loop@/vendor/etc/iAmCdRom.iso /mnt/cd-rom ro
+    swapon_all /vendor/etc/fstab.mt6765
 
 on post-fs
     write /proc/bootprof "INIT:post-fs"
@@ -150,7 +150,7 @@ on post-fs
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
 
-    #change permission for engineer mode
+    # Change permission for engineer mode
     chown radio system /proc/freqhopping/dramc
     chown radio system /proc/freqhopping/dumpregs
     chown radio system /proc/freqhopping/freqhopping_debug
@@ -163,7 +163,7 @@ on post-fs
     symlink /dev/block/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/preloader_a
     symlink /dev/block/mmcblk0boot1 /dev/block/platform/bootdevice/by-name/preloader_b
 
-# change owner
+    # change owner
     chown system system /proc/bootprof
     chmod 0664 /proc/bootprof
     chown root system /proc/mtprof/cputime
@@ -245,7 +245,7 @@ on post-fs-data
     mkdir /dev/radio 0770 radio radio
 
 
-# GPS
+    # GPS
     chmod 0775 /vendor/xbin/MPED
     chmod 0666 /dev/gps_emi
     
@@ -265,11 +265,6 @@ on post-fs-data
 
     # radvd
     chmod 444 /etc/radvd/radvd.conf
-
-    # Mali 3D GPU driver
-    #insmod /vendor/lib/modules/mali.ko
-    chmod 666 /dev/mali0
-    #chown system graphics /dev/mali
 
     # Touch Panel
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
@@ -328,9 +323,6 @@ on post-fs-data
 
     # Accdet
     chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
-
-    # Fingerprint
-    chmod 0666 /dev/goodix_fp
 
     # VideoCodec
     chmod 0660 /dev/Vcodec
@@ -412,12 +404,6 @@ on post-fs-data
     chmod 0664 /dev/mtk_disp_mgr
     chown system graphics /dev/mtk_disp_mgr
 
-    chmod 0660 /dev/mtkfb_vsync
-    chown system graphics /dev/mtkfb_vsync
-
-    chmod 0660 /dev/sw_sync
-    chown system graphics /dev/sw_sync
-
     # EM baseband file
     chown root diag /vendor/bin/baseband_regdump
     chmod 4750 /vendor/bin/baseband_regdump
@@ -453,109 +439,41 @@ on post-fs-data
     chmod 0660 /dev/fm
     chown system system /dev/fm
 
-    # device apc settings
-
     # device info /proc interface
     chmod 0440 /dev/devmap
     chown root system /dev/devmap
 
-    # bluetooth
-    chown bluetooth bluetooth /dev/hid-keyboard
-    chmod 0660 /dev/hid-keyboard
-
     # Use uinput's default permission
     chown system net_bt_admin /dev/uinput
 
-    # UIBC
-    chown system media /dev/uibc
-    chmod 0660 /dev/uibc
-
-    # TV-out
-    chmod 0664 /dev/TV-out
-
-    # HDMI
-    chown media system /dev/hdmitx
-    chmod 0664 /dev/hdmitx
-
-
-    # JPEG
-    chmod 0664 /proc/mtk_jpeg
-
-    # almk
-    chmod 0440 /dev/mtk_almk
-
-    # DISP
-    chmod 0444 /dev/mtk_disp
-
-    # ANC SERVICE
-    chmod 0640 /dev/ancservice
-    chown media media /dev/ancservice
-
     # Camera
-    chmod 0660 /dev/camera-sysram
     chmod 0660 /dev/camera-isp
-    chmod 0660 /dev/camera-tsf
     chmod 0660 /dev/camera-dpe
     chmod 0660 /dev/camera-fdvt
-    chmod 0660 /dev/camera-pipemgr
     chmod 0660 /dev/kd_camera_hw
     chmod 0660 /dev/flashlight
-    chmod 0660 /dev/kd_camera_hw_bus2
-    chmod 0660 /dev/FM50AF
     chmod 0660 /dev/CAM_CAL_DRV
     chmod 0660 /dev/MAINAF
     chmod 0660 /dev/MAIN2AF
-    chmod 0660 /dev/SUBAF
 
-    chown system camera /dev/camera-sysram
     chown system camera /dev/camera-isp
     chown system camera /dev/camera-dpe
-    chown system camera /dev/camera-tsf
     chown system camera /dev/camera-fdvt
-    chown system camera /dev/camera-pipemgr
     chown system camera /dev/kd_camera_hw
     chown system camera /dev/flashlight
-    chown system camera /dev/kd_camera_hw_bus2
-    chown system camera /dev/FM50AF
     chown system camera /dev/CAM_CAL_DRV
     chown system camera /dev/MAINAF
     chown system camera /dev/MAIN2AF
-    chown system camera /dev/SUBAF
 
     # CCU
     chmod 0666 /dev/ccu
     chown system camera /dev/ccu
 
-    # VOW
-    chmod 0640 /dev/vow
-    chown media media /dev/vow
-
-    # MATV
-    chmod 0660 /dev/MATV
-    chown system media /dev/MATV
-
-    # otg_test
-    chown root radio /dev/mt_otg_test
-    chmod 0660 /dev/mt_otg_test
-
-    # MDP
-    chmod 0660 /dev/mt-mdp
-    chown system media /dev/mt-mdp
-
     # SMI
     chmod 0660 /dev/MTK_SMI
     chown media media /dev/MTK_SMI
 
-    # RRC
-    chmod 0660 /dev/mtk_rrc
-    chown media system /dev/mtk_rrc
-
-    # DFRC
-    chmod 0660 /dev/mtk_dfrc
-    chown system graphics /dev/mtk_dfrc
-
     # Change partition permission
-
     chmod 0640 /mtd@sec_ro
     chown root system /mtd@sec_ro
 
@@ -583,20 +501,6 @@ on post-fs-data
     chmod 0664 /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
     chown media media /sys/bus/platform/drivers/emi_ctrl/concurrency_scenario
 
-    # mtk_sched
-    chmod 0660 /dev/mtk_sched
-    chown system media /dev/mtk_sched
-
-    # BT SCO CVSD, for MT6572 and MT6582 CVSD codec on AP
-    chmod 0660 /dev/ebc
-    chown media media /dev/ebc
-
-    chmod 0666 /dev/uio0
-
-    # otp
-    chmod 0660 /proc/driver/otp
-    chown root system /proc/driver/otp
-
     # sn
     chmod 0664 /sys/class/android_usb/android0/iSerial
     chown root system /sys/class/android_usb/android0/iSerial
@@ -605,9 +509,6 @@ on post-fs-data
 
     # secure memory
     chown system system /proc/secmem0
-
-    chmod 0666 /dev/exm0
-
 
     # Thermal
     mkdir /data/vendor/.tp/ 0775 system system
@@ -694,11 +595,11 @@ on boot
     chmod 0220 /sys/power/tuxonice/do_hibernate
 
 
-# Smartbook Handler Framework
+    # Smartbook Handler Framework
     chown system system /sys/power/sb_state
     chmod 0660 /sys/power/sb_state
 
-# HMP CPU hotplug strategy
+    # HMP CPU hotplug strategy
     chown system system /proc/hps/num_base_perf_serv
     chmod 0660 /proc/hps/num_base_perf_serv
     chown system system /proc/hps/num_limit_power_serv
@@ -720,7 +621,7 @@ on boot
     chown system system /proc/hps/down_times
     chmod 0660 /proc/hps/down_times
 
-# PPM
+    # PPM
     chown system system /proc/ppm/mode
     chmod 0660 /proc/ppm/mode
     chown system system /proc/ppm/policy/perfserv_min_perf_idx
@@ -754,7 +655,7 @@ on boot
     chown system system /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
     chmod 0660 /proc/ppm/policy/hica_settings/L_ONLY_to_4L_LL/loading_hold_time
 
-# cpu_loading
+    # cpu_loading
     chown system system /proc/cpu_loading/onoff
     chmod 0664 /proc/cpu_loading/onoff
     chown system system /proc/cpu_loading/overThrhld
@@ -766,7 +667,7 @@ on boot
     chown system system /proc/cpu_loading/uevent_enable
     chmod 0664 /proc/cpu_loading/uevent_enable
 
-# CPU freq
+    # CPU freq
     chown system system /proc/cpufreq/cpufreq_limited_by_hevc
     chmod 0660 /proc/cpufreq/cpufreq_limited_by_hevc
     chown system system /proc/cpufreq/cpufreq_limited_max_freq_by_user
@@ -776,7 +677,7 @@ on boot
     chown system system /proc/cpufreq/enable_hw_gov
     chmod 0660 /proc/cpufreq/enable_hw_gov
 
-# BW monitor
+    # BW monitor
     chown system system /proc/fliperfs/cg_enable
     chmod 0664 /proc/fliperfs/cg_enable
     chown system system /proc/fliperfs/cg_threshold
@@ -786,7 +687,7 @@ on boot
     chown system system /proc/fliperfs/perf
     chmod 0664 /proc/fliperfs/perf
 
-# perfmgr
+    # perfmgr
     chown system system /proc/perfmgr/smart/smart_uevent_enable
     chmod 0660 /proc/perfmgr/smart/smart_uevent_enable
     chown system system /proc/perfmgr/smart/smart_force_isolate
@@ -863,7 +764,7 @@ on boot
     chmod 0660 /proc/perfmgr/boost_ctrl/eas_ctrl/dram_ctrl/ddr
 
  
-# Netlog tool
+    # Netlog tool
     # Change permissions about terminal
     chown root radio /proc/net/vlan/config
     chmod 0640 /proc/net/vlan/config
@@ -883,15 +784,15 @@ on boot
     chown root radio /proc/net/netfilter/nfnetlink_log
     chown root radio /proc/net/netfilter/nfnetlink_queue
 
-# WMT proc
+    # WMT proc
     chown shell system /proc/driver/wmt_dbg
     chown shell system /proc/driver/wmt_aee
 
-# Define device for EMCSMDLOGGER
+    # Define device for EMCSMDLOGGER
     chown system radio /dev/ttyGS3
     chmod 0660 /dev/ttyGS3
 
-# Define device for ATCID
+    # Define device for ATCID
     chmod 660 /dev/ttyGS0
     chown system radio /dev/ttyGS0
     chmod 660 /dev/ttyGS1
@@ -901,8 +802,8 @@ on boot
     chown root system /dev/MT_pmic_adc_cali
     chmod 660 /dev/MT_pmic_adc_cali
 
-# Define TCP buffer sizes for various networks
-#   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
+    # Define TCP buffer sizes for various networks
+    # ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.default 4096,87380,524288,4096,16384,524288
     setprop net.tcp.buffersize.wifi    524288,1048576,2097152,262144,524288,1048576
     setprop net.tcp.buffersize.lte     524288,1048576,2097152,262144,524288,1048576
@@ -936,8 +837,6 @@ on property:sys.boot_completed=1
 # ifdef ODM_WT_EDIT
 # chen.xu@ODM_WT.bsp.storage,2020/06/01,modify for iowait
     write /sys/block/mmcblk0/queue/read_ahead_kb 128
-# else
-#   write /sys/block/mmcblk0/queue/read_ahead_kb 512
 #endif
 
     write /sys/block/mmcblk0/queue/nr_requests 128
@@ -978,19 +877,6 @@ on property:sys.boot_completed=1
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "-1 -1 -1 -1"
     write /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_req_ddr_opp "-1"
 
-service pppoe_wlan0 /vendor/bin/launchpppoe
-    user root
-    group radio cache inet misc
-    disabled
-    oneshot
-
-
-service cmmb /system/bin/cmmbsp
-    class main
-    user root
-    group system audio camera graphics inet net_bt net_bt_admin net_bw_acct media
-    ioprio rt 4
-
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
     write /sys/devices/platform/battery_meter/FG_daemon_disable 1
@@ -1009,46 +895,12 @@ on property:persist.vendor.mediatek.fg.log.enable=1
     write /sys/bus/platform/devices/battery/FG_daemon_log_level 7
     write /proc/sys/kernel/printk 8
 
-
-
-
 on init
     symlink /dev/block/platform/bootdevice /dev/block/bootdevice
 
 # FPSGO FBT Game
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
-
-# Qiang.shao@PSW.AD.OppoFeature.CommonSoft.1181235, 2016/07/30, Add for self_init domain to access block_device for init prop
-service prop-adap-core /vendor/bin/self-init core
-    class core
-    user root
-    oneshot
-    seclabel u:r:rutilsdaemon:s0
-
-service prop-adap-main /vendor/bin/self-init main
-    class main
-    user root
-    oneshot
-    seclabel u:r:rutilsdaemon:s0
-
-service media-resource-reconciliation /vendor/bin/self-init reconcile_media_resource
-    user root
-    oneshot
-    disabled
-    seclabel u:r:rutilsdaemon:s0
-
-service prop-adap-core-gsi /vendor/bin/self-init gsicore
-    class core
-    user root
-    group root system radio
-    oneshot
-
-service prop-adap-main-gsi /vendor/bin/self-init gsimain
-    class main
-    user root
-    group root system radio
-    oneshot
 
 # Charger
 service charger /system/bin/chargeonlymode
@@ -1057,10 +909,6 @@ service charger /system/bin/chargeonlymode
     #seclabel u:r:charger:s0
     group system graphics
     seclabel u:r:healthd:s0
-
-on property:ro.oppo.reconcile_media_resource=1
-    start media-resource-reconciliation
-#endif
 
 #ifdef ODM_CM_EDIT
 # chengzhu.You@ODM.CM.ANDROID, 2020/07/01, Add for gsi CtsOsTestCases

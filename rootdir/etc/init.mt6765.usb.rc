@@ -7,7 +7,7 @@ on post-fs
 #setprop vendor.usb.vid "0x0E8D"
 #else /* ODM_HQ_EDIT */
 setprop vendor.usb.vid "0x22d9"
-#endif /* ODM_HQ_EDIT *
+#endif /* ODM_HQ_EDIT */
     mkdir /dev/usb-ffs 0770 shell shell
     mkdir /dev/usb-ffs/adb 0770 shell shell
     mkdir /config/usb_gadget/g1 0770 shell shell
