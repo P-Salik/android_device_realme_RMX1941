@@ -357,7 +357,8 @@ vendor/lib64/libdrm.so
 
 # Engineering
 -priv-app/EngineerMode/EngineerMode.apk
-lib/libem_support_jni.so
+-lib/libem_support_jni.so
+-lib64/libem_support_jni.so
 
 # Firmware
 etc/firmware/hx_criteria.csv
