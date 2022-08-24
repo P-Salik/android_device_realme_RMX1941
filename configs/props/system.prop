@@ -3,6 +3,9 @@ ro.camera.sound.forced=0
 ro.audio.silent=0
 ro.config.vc_call_vol_steps=7
 
+# Bluetooth
+persist.bluetooth.system_audio_hal.enabled=1
+
 # Dex
 persist.bg.dexopt.enable=true
 pm.dexopt.install=speed-profile
