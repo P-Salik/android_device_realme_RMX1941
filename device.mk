@@ -27,7 +27,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/flash_super_dummy.sh:install/bin/flash_super_dummy.sh
+    $(DEVICE_PATH)/configs/flash_super_dummy.sh:install/bin/flash_super_dummy.sh
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 28
