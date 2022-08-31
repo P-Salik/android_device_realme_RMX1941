@@ -897,14 +897,6 @@ on init
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
 
-# Charger
-service charger /system/bin/chargeonlymode
-    class charger
-    critical
-    #seclabel u:r:charger:s0
-    group system graphics
-    seclabel u:r:healthd:s0
-
 #ifdef ODM_CM_EDIT
 # chengzhu.You@ODM.CM.ANDROID, 2020/07/01, Add for gsi CtsOsTestCases
 on property:ro.vendor.gsi.build.flavor=*

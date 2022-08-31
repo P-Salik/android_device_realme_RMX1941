@@ -331,9 +331,6 @@ vendor/etc/camera/megviisegment_model
 vendor/etc/camera/merged_model_post
 vendor/etc/camera/model_mdl_cache
 
-# Charger - from Redmi/merlin/merlin:11/RP1A.200720.011/V12.5.1.0.RJOMIXM:user/release-keys
-bin/charger:bin/chargeonlymode|eeb5a0e80057cce782b4555389310e83a408ad37
-
 # DRM (Hardware) - from alps/vnd_oppo6765/oppo6765:11/RP1A.200720.011/1609743540423:user/release-keys
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine|bb1ee465a6608d2704fbe9a787acbc7c4dc0aa85
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc|c35e1a6f9a6faff19064a81e07c4be82ceaf4bb5
