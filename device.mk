@@ -105,10 +105,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     android.hardware.memtrack@1.0.vendor
 
-# FSTAB
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765
-
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
@@ -256,12 +252,15 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    init.recovery.mt6765.sh \
+    init.recovery.mt6765.rc \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6765.rc \
     init.mt6765.usb.rc \
     init.sensor_1_0.rc \
     fstab.mt6765 \
+    fstab.mt6765.ramdisk \
     ueventd.mt6765.rc
 
 # Realme
@@ -272,10 +271,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     parts.rc \
     perf_profile.sh
-
-# Recovery
-PRODUCT_PACKAGES += \
-    init.recovery.mt6765.rc
 
 # RenderScript
 PRODUCT_PACKAGES += \

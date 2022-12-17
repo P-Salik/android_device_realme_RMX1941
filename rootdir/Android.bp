@@ -41,6 +41,7 @@ prebuilt_etc {
 prebuilt_etc {
     name: "fstab.mt6765",
     src: "etc/fstab.mt6765",
+    ramdisk_available: true,
     vendor: true,
 }
 
@@ -49,4 +50,18 @@ prebuilt_etc {
     filename: "ueventd.rc",
     src: "etc/ueventd.mt6765.rc",
     vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.mt6765.rc",
+    src: "etc/init.recovery.mt6765.rc",
+    sub_dir: "init",
+    recovery: true,
+}
+
+prebuilt_etc {
+    name: "init.recovery.mt6765.sh",
+    src: "etc/init.recovery.mt6765.sh",
+    sub_dir: "init",
+    recovery: true,
 }
