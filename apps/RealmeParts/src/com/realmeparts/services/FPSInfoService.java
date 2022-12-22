@@ -41,7 +41,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 
 public class FPSInfoService extends Service {
-    private static final String MEASURED_FPS = "/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps";
+    private static final String MEASURED_FPS = "/proc/fps_tm/fps_count";
     private final String TAG = "FPSInfoService";
     private View mView;
     private Thread mCurFPSThread;
