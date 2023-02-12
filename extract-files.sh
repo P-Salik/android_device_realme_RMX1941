@@ -58,6 +58,9 @@ function blob_fixup() {
         lib/libmtk_vt_service.so)
 	    "${PATCHELF}" --add-needed "libshim_vtservice.so" "${2}"
 	    ;;
+	vendor/bin/hw/android.hardware.audio@5.0-service-mediatek)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
         vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek)
             "${PATCHELF}" --replace-needed "libwifi-hal.so" "libwifi-hal-mtk.so" "${2}"
             ;;
