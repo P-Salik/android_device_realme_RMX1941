@@ -1,25 +1,17 @@
 # MTK platform .rc configure
 
-import vendor/etc/init/hw/init.connectivity.rc
+import /vendor/etc/init/hw/init.connectivity.rc
 import /vendor/etc/init/hw/init.mt6765.usb.rc
-import /FWUpgradeInit.rc
-import vendor/etc/init/hw/init.volte.rc
-import vendor/etc/init/hw/init.mal.rc
-import vendor/etc/init/hw/init.sensor_1_0.rc
-import /init.oppo.face.rc
-import /init.oppo.seccommon.rc
+import /vendor/etc/init/hw/init.sensor_1_0.rc
 
 # init.modem.rc must be the LAST rc file because vold.post_fs_data_done is set in it
-import vendor/etc/init/hw/init.modem.rc
+import /vendor/etc/init/hw/init.modem.rc
 
 on early-init
     write /proc/bootprof "INIT:early-init"
     # boot perf. tune
 
-# ifdef ODM_WT_EDIT
-# Qun.Lin@ODM_WT.Memroy.Performance, 2020/05/08, limit cpu to max core and freq during booting up
     write /proc/perfmgr/boost_ctrl/cpu_ctrl/boot_freq "0 0 0 0"
-# endif /*ODM_WT_EDIT*/
 
     write /sys/devices/platform/10012000.dvfsrc/helio-dvfsrc/dvfsrc_req_ddr_opp 0
     mount debugfs debugfs /sys/kernel/debug
@@ -120,8 +112,6 @@ on fs
     write /proc/bootprof "INIT:Mount_START"
     write /sys/kernel/debug/tracing/trace_marker "B|1|Mount"
 
-    #Xuefeng.Peng@PSW.AD.Storage.ReservePartition.1207580, 2018/11/19, Add for change opporeserve mount point for google GSI test
-    mkdir /mnt/vendor/opporeserve 0771 system system
     wait_for_prop hwservicemanager.ready "true"
     mount_all /vendor/etc/fstab.mt6765
     exec /system/bin/tune2fs -O has_journal -u 10010 -r 4096 /dev/block/platform/bootdevice/by-name/userdata
@@ -530,8 +520,7 @@ on boot
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
-    #ifdef VENDOR_EDIT
-    #Zeke.Shi@RM.MM.Display.LCD.Params,2019-11-16 add for display
+    # Display
     chown system system /sys/kernel/oppo_display/dump_info
     chown system system /sys/kernel/oppo_display/cabc
     chown system system /sys/kernel/oppo_display/ffl_set
@@ -546,7 +535,6 @@ on boot
     chmod 0666 /sys/kernel/oppo_display/sau_closebl_node
     chmod 0666 /sys/kernel/oppo_display/esd_status
     chmod 0644 /data/oppo/multimedia/oppo_display_perf_list.xml
-    #endif /* VENDOR_EDIT */
 
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/lcd-backlight/brightness
@@ -793,7 +781,6 @@ on boot
     chmod 660 /dev/ttyGS1
     chown system radio /dev/ttyGS1
 
-#Liu.Yong@RM.CM.BSP.CHG.Basic 2020.06.09, Add for MT_pmic_adc_cali
     chown root system /dev/MT_pmic_adc_cali
     chmod 660 /dev/MT_pmic_adc_cali
 
@@ -829,10 +816,7 @@ on property:persist.vendor.uartconsole.enable=*
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/iostats 1
 
-# ifdef ODM_WT_EDIT
-# chen.xu@ODM_WT.bsp.storage,2020/06/01,modify for iowait
     write /sys/block/mmcblk0/queue/read_ahead_kb 128
-#endif
 
     write /sys/block/mmcblk0/queue/nr_requests 128
     write /sys/block/dm-0/queue/read_ahead_kb 128
@@ -897,11 +881,8 @@ on init
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
 
-#ifdef ODM_CM_EDIT
-# chengzhu.You@ODM.CM.ANDROID, 2020/07/01, Add for gsi CtsOsTestCases
 on property:ro.vendor.gsi.build.flavor=*
     restorecon /dev/loop-control
-#endif /*ODM_CM_EDIT*/
 
 # Performance profiles
 on property:perf_profile=1
