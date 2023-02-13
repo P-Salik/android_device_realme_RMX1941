@@ -6,14 +6,14 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
 #<src>                                                   <mnt_point>               <type>   <mnt_flags and options>                                            <fs_mgr_flags>
-system                                                   /system                   ext4     ro                                                                 wait,,avb=vbmeta,logical,first_stage_mount,readahead_size_kb=128
+system                                                   /system                   ext4     ro                                                                 wait,,avb=vbmeta,logical,first_stage_mount
 product                                                  /product                  ext4     ro                                                                 wait,avb,logical,first_stage_mount
 system_ext                                               /system_ext               ext4     ro                                                                 wait,avb,logical,first_stage_mount
-vendor                                                   /vendor                   ext4     ro                                                                 wait,avb,logical,first_stage_mount,readahead_size_kb=128
+vendor                                                   /vendor                   ext4     ro                                                                 wait,avb,logical,first_stage_mount
 odm                                                      /odm                      ext4     ro                                                                 wait,avb,logical,first_stage_mount
 /dev/block/platform/bootdevice/by-name/metadata          /metadata                 ext4     noatime,nosuid,nodev,discard                                       wait,check,formattable
-/dev/block/platform/bootdevice/by-name/userdata          /data                     ext4     noatime,nosuid,nodev,noauto_da_alloc,async_discard,errors=panic    wait,check,reservedsize=128M,formattable,fileencryption=aes-256-xts,readahead_size_kb=128
-/dev/block/platform/bootdevice/by-name/userdata          /data                     f2fs     noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065 wait,check,formattable,reservedsize=128m,latemount,resize,checkpoint=fs,fileencryption=aes-256-xts,readahead_size_kb=128
+/dev/block/platform/bootdevice/by-name/userdata          /data                     ext4     noatime,nosuid,nodev,noauto_da_alloc,async_discard,errors=panic    wait,check,reservedsize=128M,formattable,fileencryption=aes-256-xts
+/dev/block/platform/bootdevice/by-name/userdata          /data                     f2fs     noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065 wait,check,formattable,reservedsize=128m,latemount,resize,checkpoint=fs,fileencryption=aes-256-xts
 /dev/block/platform/bootdevice/by-name/cache             /cache                    ext4     noatime,nosuid,nodev,noauto_da_alloc,async_discard                 wait,check,formattable
 /dev/block/platform/bootdevice/by-name/protect1          /mnt/vendor/protect_f     ext4     noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc           wait,check,formattable
 /dev/block/platform/bootdevice/by-name/protect2          /mnt/vendor/protect_s     ext4     noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc           wait,check,formattable
