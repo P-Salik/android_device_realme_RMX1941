@@ -256,7 +256,6 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.oppo.wifi.debug.sh \
     init.connectivity.rc \
     init.modem.rc \
     init.mt6765.rc \
