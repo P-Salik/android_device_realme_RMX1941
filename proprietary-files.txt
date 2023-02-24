@@ -16,14 +16,7 @@ vendor/lib64/libaedv.so|bd09673530e80f6cde27d91229b6df6394191053
 vendor/lib64/libladder.so|47ab171fde2026c25c0c63f0af9bfcee3fcd74a9
 
 # Audio
-vendor/etc/dirac/18540/diracmobile.config
-vendor/etc/dirac/18540/diracvdd.bin
-vendor/etc/diracmobile.config
-vendor/etc/diracvdd.bin
 vendor/lib/soundfx/libaudiopreprocessing.so
-vendor/lib/soundfx/libdirac.so
-vendor/lib/libDiracAPI_SHARED.so
-vendor/lib/libDiracAPI_SHARED.so
 vendor/lib/libaudio_engineer_test.so
 vendor/lib/libaudio_engineer_test.so
 vendor/lib/libaudio_param_parser-vnd.so
