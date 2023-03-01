@@ -80,7 +80,7 @@ drm.service.enabled=true
 ro.vendor.mtk_widevine_drm_l3_support=1
 
 # EGL
-ro.hardware.egl=mtk
+ro.hardware.egl=meow
 
 # FRP
 ro.frp.pst=/dev/block/platform/bootdevice/by-name/frp
