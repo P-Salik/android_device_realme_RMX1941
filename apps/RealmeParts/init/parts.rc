@@ -1,10 +1,9 @@
-
 on boot
+    # HBM
     chown system system /sys/class/power_supply/usb/otg_switch
     chown system system /sys/kernel/oppo_display/hbm
     chmod 0666 /sys/kernel/oppo_display/hbm
 
-on boot
     # CABC
     chown system system /sys/kernel/oppo_display/cabc
     chmod 0644 /sys/kernel/oppo_display/cabc
@@ -24,3 +23,18 @@ on property:persist.cabc_profile=2
     # CABC aggressive
 on property:persist.cabc_profile=3
     write /sys/kernel/oppo_display/cabc 3
+
+    # Performance profiles
+on property:persist.perf_profile=2
+    exec - root -- /system/bin/perf_profile.sh 2
+
+on property:persist.perf_profile=1
+    exec - root -- /system/bin/perf_profile.sh 1
+
+on property:persist.perf_profile=0
+    exec - root -- /system/bin/perf_profile.sh 0
+
+on property:sys.boot_completed=1
+    chown root root /sys/module/ged/parameters/gx_force_cpu_boost
+    chown root root /proc/cpufreq/cpufreq_power_mode
+
