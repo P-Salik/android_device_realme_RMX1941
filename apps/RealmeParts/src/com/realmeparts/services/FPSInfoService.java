@@ -172,7 +172,7 @@ public class FPSInfoService extends Service {
                 }
                 if (msg.what == 1) {
                     String msgData = (String) msg.obj;
-                    msgData = msgData.substring(0, Math.min(msgData.length(), 9));
+                    msgData = msgData.substring(0, Math.min(msgData.length(), 2));
                     mFps = msgData;
                     mDataAvail = true;
                     updateDisplay();
