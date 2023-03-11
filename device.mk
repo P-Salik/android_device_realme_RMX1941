@@ -88,6 +88,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4 \
     android.hardware.camera.provider@2.4.vendor
 
+# Dependencies of kpoc_charger
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0 \
+    libsuspend
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor \
