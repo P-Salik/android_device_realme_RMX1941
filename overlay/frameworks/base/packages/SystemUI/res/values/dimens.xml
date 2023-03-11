@@ -20,6 +20,6 @@
 <resources>
 
     <!-- Adjust the icon padding in status bar for rounded corners --> 
-    <dimen name="rounded_corner_content_padding">14.0dip</dimen>
+    <dimen name="rounded_corner_content_padding">34.0px</dimen>
 
 </resources>
