@@ -228,6 +228,9 @@ vendor/bin/mtkcam-debug
 vendor/etc/init/camerahalserver.rc
 vendor/etc/init/camerasloganserver.rc
 
+# Charger - from Redmi/merlin/merlin:11/RP1A.200720.011/V12.5.1.0.RJOMIXM:user/release-keys
+bin/charger:bin/chargeonlymode|eeb5a0e80057cce782b4555389310e83a408ad37
+
 # DRM (Hardware) - from OnePlus/CPH2469/OP595BL1:12/SP1A.210812.016/S.GDPR.202207051130:user/release-keys
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine|8307cea32c20bdc6e7456a6060ebefcfe743b02c
 vendor/etc/init/android.hardware.drm@1.4-service.widevine.rc|992f63e9700da29099e0590858a6becaaadb2976

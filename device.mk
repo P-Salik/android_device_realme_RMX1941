@@ -125,8 +125,9 @@ PRODUCT_PACKAGES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.RMX1941 \
-    android.hardware.health-service.RMX1941-recovery
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-impl.recovery \
+    android.hardware.health@2.1-service
 
 # GPS
 PRODUCT_PACKAGES += \

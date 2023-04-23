@@ -870,6 +870,14 @@ on init
 on boot
     insmod /vendor/lib/modules/fpsgo.ko
 
+# Charger
+service charger /system/bin/chargeonlymode
+    class charger
+    critical
+    #seclabel u:r:charger:s0
+    group system graphics
+    seclabel u:r:healthd:s0
+
 on property:ro.vendor.gsi.build.flavor=*
     restorecon /dev/loop-control
 

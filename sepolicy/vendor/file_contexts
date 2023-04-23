@@ -1,5 +1,3 @@
-/(vendor|system/vendor)/bin/hw/android\.hardware\.health-service\.RMX1941 u:object_r:hal_health_default_exec:s0
-
 # Light
 /vendor/bin/hw/android\.hardware\.light-service\.RMX1941                        u:object_r:hal_light_default_exec:s0
 
