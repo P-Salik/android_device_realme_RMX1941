@@ -70,11 +70,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.bluetooth@1.0.vendor
 
-# Bluetooth Audio (System-side HAL, sysbta)
-PRODUCT_PACKAGES += \
-    audio.sysbta.default \
-    android.hardware.bluetooth.audio-service-system
-
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.2.vendor \
